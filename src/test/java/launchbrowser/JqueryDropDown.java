@@ -41,10 +41,6 @@ public class JqueryDropDown {
 						item.click();
 						break;
 					}
-<<<<<<< HEAD
-					
-=======
->>>>>>> 566ae85a51f0983a00ea675c7f0a91f4b00a58cc
 				}
 			}
 		} else {
