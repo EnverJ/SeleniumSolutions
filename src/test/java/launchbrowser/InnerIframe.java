@@ -20,7 +20,11 @@ public class InnerIframe {
 		driver.manage().window().maximize();
 		driver.findElement(By.xpath("//a[contains(text(),'Iframe with in an Iframe')]")).click();
 		WebElement outerIframe=driver.findElement(By.xpath("//iframe[@src='MultipleFrames.html']"));
-		driver.switchTo().frame(outerIframe);
+		driver.switchTo().frame(outerIframe); // we are passing frame as a webelement
+		
+		WebElement innerIrame=driver.findElement(By.xpath("//iframe[@src='SingleFrame.html']"));
+		driver.switchTo().frame(innerIrame); // we are passing frame as a webelement
+		driver.findElement(By.xpath("//input[@type='text']")).sendKeys("Welcome!!!");
 
 	}
 
