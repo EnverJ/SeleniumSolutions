@@ -42,9 +42,17 @@ public class DynamicWebTablewithPageNation {
         System.out.println("Total number of pages: "+total_pages);
         
         // click on every page
-        for(int p=1;p<=total_pages;p++){
-        	String textFirstPage=driver.findElement(By.xpath("//span[normalize-space()='1']")).getText();
-        	System.out.println(textFirstPage);
+        for(int p=1;p<=10;p++){
+        	WebElement activePage=driver.findElement(By.xpath("//ul[@class='pagination']//li//span"));
+        	System.out.println("Active page is "+activePage.getText());
+        	activePage.click();
+        	
+        	int rows=driver.findElements(By.xpath("//table[@class='table table-bordered table-hover']//tbody/tr")).size();
+        	System.out.println("Number of rows:"+rows);
+        	
+        	String pageNo=Integer.toString(p+1);
+        	driver.findElement(By.xpath("//ul[@class='pagination']//li//a[text()='"+pageNo+"']")).click();
+        	
         }
         
         
